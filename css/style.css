@@ -11455,22 +11455,49 @@ a.text-dark:focus {
 
 .coverflow {
     position: relative;
-    width: 750px;
+    width: 550px;
     height: 420px;
     display: flex;
     justify-content: center;
     align-items: center;
     perspective: 1800px;
+    overflow: hidden; /* 🔥 oculta imágenes extras */
 }
 
 .coverflow .cover-item {
     position: absolute;
-    width: 280px;
+    width: 250px;
     height: 350px;
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 12px 30px rgba(0,0,0,0.35);
     transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* --- POSICIONES DE LAS 3 IMÁGENES VISIBLES --- */
+
+.coverflow .center {
+    transform: translateX(0) scale(1) rotateY(0deg);
+    opacity: 1;
+    z-index: 3;
+}
+
+.coverflow .left {
+    transform: translateX(-220px) scale(0.8) rotateY(30deg);
+    opacity: 0.6;
+    z-index: 2;
+}
+
+.coverflow .right {
+    transform: translateX(220px) scale(0.8) rotateY(-30deg);
+    opacity: 0.6;
+    z-index: 2;
+}
+
+/* Ocultar imágenes que no estén entre las 3 visibles */
+.coverflow .hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .coverflow-btns {
@@ -11492,3 +11519,6 @@ a.text-dark:focus {
 .coverflow-btns button:hover {
     background: #4fb4f3;
 }
+
+
+
