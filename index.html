@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>La dulce espera Victor</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+    body {
+            position: relative;
+            min-height: 100vh;
+            /* fallback color if image fails */
+            background: #fff;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background-image: url('img/fondo2.jpg');
+            /* Cambia la extensión si es necesario */
+            background-size: cover;
+            background-repeat: repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            filter: blur(1px) brightness(1);
+            opacity: 0.75;
+            pointer-events: none;
+        }
+
+        .btn-circular {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        background: transparent;
+        color: #fff;
+        width: 70px;
+        height: 70px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        transition: background 0.2s, color 0.2s, border 0.2s;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        margin: 0.5rem;
+    }
+
+    .btn-circular:hover, .btn-circular:focus {
+        background: rgba(255,255,255,0.15);
+        color: #f8caca;
+        border-color: #f8caca;
+        outline: none;
+    }
+    .btn-rounded {
+        display: inline-block;
+        border-radius: 50px;
+        border: 2px solid #fff;
+        background: transparent;
+        color: #fff;
+        padding: 0.75rem 2.2rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        transition: background 0.2s, color 0.2s, border 0.2s;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        margin: 0.5rem;
+        cursor: pointer;
+    }
+
+    .btn-rounded:hover, .btn-rounded:focus {
+        background: rgba(255,255,255,0.15);
+        color: #f8caca;
+        border-color: #f8caca;
+        outline: none;
+    }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <!-- Navbar Start -->
+    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+        <a href="index.html" class="navbar-brand d-block d-lg-none">
+            <h1 class="font-secondary text-white mb-n2"><span class="text-primary">V</span>ictor</h1>
+        </a>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
+                <h1 class="font-secondary text-white mb-n2"></h1><span class="text-primary">V</span>ictor</h1>
+            </a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5 pb-5" id="home">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item position-relative active" style="height: 100vh; min-height: 400px;">
+                    <img class="position-absolute w-100 h-100" src="img/1.jpeg" style="object-fit: cover;">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4"><br>La dulce espera</h1>
+                            <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
+                                <h3 class="text-uppercase font-weight-normal text-white m-0"
+                                    style="letter-spacing: 2px;">Victor</h3>
+                            </div>
+
+                            <audio id="miMusica" src="audio/musica.mp4"></audio>
+                            <button type="button" class="btn-play mx-auto" onclick="toggleReproducirPausar()">
+                                <span></span>
+                            </button>
+                        </div>
+                        <div class="container-fluid py-1" id="about">
+        <div class="container py-1 text-center">
+            <div class="section-title position-relative text-center">
+                <h1 style="color: #fff;" class="font-secondary display-4">Faltan</h1>
+                <i style="color: #4fb4f3;" class="far fa-heart"></i>
+            </div>
+            <div class="contador">
+                <div class="tiempo" id="dias">00</div>
+                <div class="texto">Días</div>
+            </div>
+            <div class="contador">
+                <div class="tiempo" id="horas">00</div>
+                <div class="texto">Horas</div>
+            </div>
+            <div class="contador">
+                <div class="tiempo" id="minutos">00</div>
+                <div class="texto">Minutos</div>
+            </div>
+            <div class="contador">
+                <div class="tiempo" id="segundos">00</div>
+                <div class="texto">Segundos</div>
+            </div>
+        </div>
+    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- Video Modal Start -->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <!-- 16:9 aspect ratio -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                            allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video Modal End -->
+    <!-- Event Start -->
+    <div class="container-fluid py-1" id="event">
+        <div class="container py-1">
+            <div class="section-title position-relative text-center">
+                <h1 class="font-secondary display-4">28 Diciembre 2025</h1>
+                <i class="far fa-heart text-dark"></i>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <h5 class="font-weight-normal text-muted mb-3 pb-3">Pronto habrá una nueva sonrisa iluminando nuestras vidas y, con inmensa alegría, preparamos su llegada. Acompáñanos a celebrar este hermoso momento...
+                    </h5>
+                    <h1 class="font-secondary display-4"><br>Mis Padres</h1><br>
+                    <h5 class="font-weight-normal text-muted mb-3 pb-3"> Omar<br>& <br>Victoria</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Event End -->
+
+        <!-- About Start -->
+    
+
+
+    <!-- Itinerario Start -->
+    <div class="container-fluid py-1" id="itinerario">
+        <div class="container py-1">
+            <div class="section-title position-relative text-center">
+                <h1 class="font-secondary display-4">Itinerario </h1>
+                <i class="far fa-heart text-dark"></i>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 d-flex justify-content-center">
+                    <ul class="list-unstyled" style="font-size: 1.3rem; font-family: 'Engagement', cursive; text-align: left; max-width: 420px;">
+                        <li class="mb-3">
+                            <i class="fas fa-church text-primary mr-2"></i>
+                            <strong>5:45 a 6:30 pm:</strong> Misa
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-glass-cheers text-primary mr-2"></i>
+                            <strong>7:00 a 7:30 pm:</strong> Recepción
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-utensils text-primary mr-2"></i>
+                            <strong>8:00 pm:</strong> Cena
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-music text-primary mr-2"></i>
+                            <strong>9:00 pm:</strong> Vals y brindis
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-drum text-primary mr-2"></i>
+                            <strong>11:30 pm a 1:30 am:</strong> Banda
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-guitar text-primary mr-2"></i>
+                            <strong>1:30 a 3:30 am:</strong> Orquesta
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-bolt text-primary mr-2"></i>
+                            <strong>3:30 a 5:30 am:</strong> Rock
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-moon text-primary mr-2"></i>
+                            <strong>5:30 a 6:00 am:</strong> Bye bye
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Itinerario End -->
+
+
+
+
+    </div>
+    <!-- About End -->
+    <!-- Story Start -->
+    <div class="container-fluid py-1" id="event">
+        <div class="container py-1">
+            <div class="section-title position-relative text-center">
+                <h1 class="font-secondary display-4">Ubicación</h1>
+                <i class="far fa-heart text-dark"></i>
+            </div>
+            
+            
+            <h6 class="text-uppercase text-primary mb-3 text-center text-md-center">
+                <br>Recepción : 4:00 a 4:30 pm<br><br>
+                <i class="far fa-heart text-dark"></i>
+                <div class="section-title position-relative text-center"></div>
+             
+            </h6>
+            <p class="text-center">México Lindo 226, Benito Juárez, 57000 Cdad. Nezahualcóyotl, Méx.</p>
+            <div class="row">
+                
+                <div class="map-container embed-responsive embed-responsive-16by9 border border-dark rounded">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.156275825111!2d-99.00432832416452!3d19.405652641539632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1e33007decaed%3A0x8daa72607fedab72!2sSal%C3%B3n%20Jardin%20M%C3%A9xico%20Lindo!5e0!3m2!1ses!2smx!4v1764026259443!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- Story End -->
+    <!-- Story End -->
+
+
+    <!-- Gallery Start -->
+
+    <div class="container-fluid py-1" id="about">
+        <div class="container py-1 text-center">
+            <div class="section-title position-relative text-center">
+                <h1 class="font-secondary display-4">Mis Recuerdos</h1>
+                <i class="far fa-heart text-dark"></i>
+            </div>
+            <h5 class="font-weight-normal text-muted mb-3 pb-3">
+            Soy un dulce recuerdo que vive en sus corazones y la promesa de un futuro lleno de amor; así me esperan mis padres, soñándome cada día.
+            </h5>
+            <div id="family" class="family-box">
+                <div class="container">
+
+                    <!-- Gallery Start -->
+                        <div class="coverflow-wrapper">
+                            <div class="coverflow" id="coverflow">
+                                <img src="img/c1.jpg" class="cover-item" alt="1">
+                                <img src="img/c1.jpg" class="cover-item" alt="2">
+                                <img src="img/c1.jpg" class="cover-item" alt="3">
+                                <img src="img/c1.jpg" class="cover-item" alt="4">
+                                <img src="img/c1.jpg" class="cover-item" alt="5">
+                            </div>
+
+                            <div class="coverflow-btns">
+                                <button id="prevBtn">‹</button>
+                                <button id="nextBtn">›</button>
+                            </div>
+                        </div>
+
+                    <!-- Gallery End -->
+
+
+
+                    <div class="section-title position-relative text-center">
+                        <h1 class="font-secondary display-4">Dress Code</h1>
+                        <i class="far fa-heart text-dark"></i>
+                    </div>
+                    <div class="contenedor">
+                        <button id="" class="boton-circular">
+                            <img id="botonImagen" src="img/oso.jpg">
+                        </button>
+                        <h5 class="font-weight-normal text-muted mb-3 pb-3"><br>
+                            Para celebrar, el ambiente será de gala, por lo que te pedimos un atuendo semi-formal. ¡Vístete para deslumbrar!
+                            <br><br>
+                            "Semi-Formal"
+                        </h5>
+                        <i class="far fa-heart text-dark"></i>
+                        <style>
+                            .contenedor {
+                                text-align: center;
+                            }
+                        </style>
+                    </div><br>
+                    <div class="section-title position-relative text-center">
+                        <h1 class="font-secondary display-4">Opciones de Regalo</h1>
+                        <i class="far fa-heart text-dark"></i>
+                    </div>
+                    <div class="contenedor">
+                        <button id="" class="boton-circular">
+                            <img id="botonImagen" src="img/oso.jpg">
+                        </button>
+                        <h5 class="font-weight-normal text-muted mb-3 pb-3"><br>
+                            Tu compañía es el regalo más valioso. Si además quieres contribuir con un detalle, puedes hacerlo a través de una lluvia de sobres. Es una forma práctica de ayudarme a construir el camino hacia mis sueños.
+                            <br><br>
+                          "Lluvia de Sobres"
+                          <br><br><i class="far fa-heart text-dark"></i>
+
+                        </h5>
+                        <style>
+                            .contenedor {
+                                text-align: center;
+                            }
+                        </style>
+                    </div>
+                </div><br><br>
+               
+                <div class="section-title position-relative text-center">
+                    <h1 class="font-secondary display-4">Confirmación de Asistencia</h1>
+                    <i class="far fa-heart text-dark"></i>
+                </div>
+                <h5 class="font-weight-normal text-muted mb-3 pb-3">
+                    ¡Mi día especial se acerca y quiero celebrarlo contigo! Será un placer contar con tu compañía.
+Por favor, confirma tu asistencia para que podamos enviarte el código de acceso.
+                </h5>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center">
+                            
+                            <div class="text-center">
+                    <button id="infoButton" class="info-button">
+    <i class="fas fa-question"></i> </button>
+
+<div id="info-overlay" class="info-overlay">
+    <div id="info-cuadro" class="info-cuadro">
+        <p id="info-mensaje"></p>
+        <button id="info-cerrar-button" class="cerrar-button">&times;</button>
+    </div>
+</div>
+                </div>
+                            <div>
+                                <button
+                    type="button"
+                    class="btn btn-light btn-rounded text-dark"
+                    onclick="window.open('https://wa.me/5631210476?text=Hola, confirmó mi asistencia..%0AMi nombre es:', '_blank')"
+                    title="Confirmar"
+                >Confirmar</button>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="verificar-codigo">  </div>
+                        <div>
+                            <h5 class="font-weight-normal text-muted mb-3 pb-3">
+                ¡Gracias por confirmar tu asistencia! Para validar el número de entradas disponibles para tu familia, por favor ingresa aquí tu código de confirmación."
+            </h5>
+                            <input type="text" id="codigo-input" class="rounded-lg rounded-pill border border-dark"><br><br>
+                            <button id="codigo-submit" class="btn btn-light btn-rounded text-dark" title="Verificar">Verificar</button>
+                            
+                            <div id="codigo-error" class="error-message">Código incorrecto.</div>
+                        </div>
+                        <br><br>
+                 
+                    </div>
+                    <div id="alerta-overlay" class="alerta-overlay">
+        <div id="alerta-cuadro" class="alerta-cuadro">
+            <div class="alerta-imagen-superior">
+                <button id="" class="boton-circular">
+                            <img id="botonImagen" src="img/oso.jpg">
+                        </button>
+                </div>
+            <p id="alerta-mensaje"></p>
+        </div>
+    </div>
+                </div>
+
+                 <div class="section-title position-relative text-center">
+                    <h1 class="font-secondary display-4">Momentos Especiales</h1>
+                    <i class="far fa-heart text-dark"></i>
+                </div>
+                <div class="contenedor">
+                    <button id="" class="boton-circular">
+                        <img id="botonImagen" src="img/oso.jpg">
+                    </button>
+                    <h5 class="font-weight-normal text-muted mb-3 pb-3"><br>
+                        Todos somos buenos capturando momentos especiales. ¿Podrías compartir con nosotros algunas de
+                        tus fotografías favoritas del evento?
+                    </h5>
+                    <style>
+                        .contenedor {
+                            text-align: center;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- End Family -->
+    </div>
+    </div>
+    <!-- Gallery End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white py-1" id="contact" style="margin-top: 90px;">
+        <div class="container text-center py-1">
+            <div class="section-title position-relative text-center">
+                <h1 class="font-secondary display-3 text-white">Contactanos</h1>
+                <i class="far fa-heart text-white"></i>
+            </div>
+            <div class="d-flex justify-content-center mb-4">
+                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2"
+                    href="https://www.facebook.com/profile.php?id=61556662087244&mibextid=ZbWKwL"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="d-flex justify-content-center py-2">
+                <p class="text-white" href="#">5514639667</p>
+                <span class="px-3">|</span>
+                <p class="text-white" href="#">invitArte.inf@gmail.com</p>
+            </div>
+            <p class="m-0">&copy; <a class="text-primary" href="#">invitArte</a> <a class="text-primary"
+                    href="https://htmlcodex.com"></a>
+            </p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Scroll to Bottom -->
+    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-outline-primary btn-lg-square back-to-top"><i
+            class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        var audio = document.getElementById("miMusica");
+
+        function toggleReproducirPausar() {
+            if (audio.paused) {
+                audio.volume = 0.75; // Establecer el volumen en 75%
+                audio.play(); // Iniciar reproducción
+            } else {
+                audio.pause(); // Pausar reproducción
+                audio.volume = 0.75; // Establecer el volumen en 75% si se pausa
+            }
+        }
+    </script>
+    <script>
+            const items = document.querySelectorAll(".cover-item");
+            let currentIndex = 2; // la imagen del centro
+
+            function updateCoverflow() {
+                items.forEach((item, i) => {
+                    const offset = i - currentIndex;
+
+                    if (offset === 0) {
+                        item.style.transform = "translateX(0px) scale(1) rotateY(0deg)";
+                        item.style.opacity = 1;
+                        item.style.zIndex = 10;
+                    } 
+                    else {
+                        const direction = offset < 0 ? -1 : 1;
+                        item.style.transform = `
+                            translateX(${direction * Math.abs(offset) * 140}px)
+                            rotateY(${direction * 40}deg)
+                            scale(0.85)
+                        `;
+                        item.style.opacity = 0.7;
+                        item.style.zIndex = 5 - Math.abs(offset);
+                    }
+                });
+            }
+
+            updateCoverflow();
+
+            document.getElementById("nextBtn").onclick = () => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateCoverflow();
+            };
+
+            document.getElementById("prevBtn").onclick = () => {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                updateCoverflow();
+            };
+
+
+    </script>
+</body>
+
+</html>
