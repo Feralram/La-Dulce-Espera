@@ -11117,7 +11117,7 @@ a.text-dark:focus {
 -------------------------------------------------------------------*/
 
 .family-box {
-  padding: 70px 0px;
+
   background: url(../images/ptn-bg.jpg);
 }
 
@@ -11450,7 +11450,6 @@ a.text-dark:focus {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 40px 0;
 }
 
 .coverflow {
@@ -11525,4 +11524,83 @@ a.text-dark:focus {
 html, body {
     overflow-x: hidden !important;
     width: 100% !important;
+}
+
+
+
+
+
+.coverflow-wrapper2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.coverflow2 {
+    position: relative;
+    width: 550px;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1800px;
+    overflow: hidden; /* 🔥 oculta imágenes extras */
+}
+
+.coverflow2 .cover-item2 {
+    position: absolute;
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* --- POSICIONES DE LAS 3 IMÁGENES VISIBLES --- */
+
+.coverflow2 .center2 {
+    transform: translateX(0) scale(1) rotateY(0deg);
+    opacity: 1;
+    z-index: 3;
+}
+
+.coverflow2 .left2 {
+    transform: translateX(-220px) scale(0.8) rotateY(30deg);
+    opacity: 0.6;
+    z-index: 2;
+}
+
+.coverflow2 .right2  {
+    transform: translateX(220px) scale(0.8) rotateY(-30deg);
+    opacity: 0.6;
+    z-index: 2;
+}
+
+/* Ocultar imágenes que no estén entre las 3 visibles */
+.coverflow2 .hidden2 {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.coverflow-btns2 {
+    margin-top: 20px;
+}
+
+.coverflow-btns2 button {
+    background: #4fb4f3;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    margin: 0 10px;
+    border-radius: 8px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.coverflow-btns2 button:hover {
+    background: #4fb4f3;
 }

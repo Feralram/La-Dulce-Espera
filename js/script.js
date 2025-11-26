@@ -166,7 +166,7 @@ function mostrarInfoAviso() {
         <p class="text-center">Familiares y amigos:</p>
         <p class="text-justify">Les recordamos que el acceso al evento será estrictamente limitado al número de personas indicado en su invitación.</p>
         <p class="text-justify">Agradecemos su comprensión para celebrar juntos.</p>
-        <p class="text-justify">La Familia Flores Hipólito</p>
+        
     `;
     infoOverlay.style.display = 'flex'; // Mostrar el overlay de información
 
