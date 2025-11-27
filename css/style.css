@@ -11637,3 +11637,34 @@ html, body {
     visibility: hidden;
   }
 }
+
+
+
+.coverflow-wrapper3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.coverflow3 {
+    position: relative;
+    width: 550px;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1800px;
+    overflow: hidden; /* 🔥 oculta imágenes extras */
+}
+
+.coverflow3 .cover-item3  {
+    position: absolute;
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
