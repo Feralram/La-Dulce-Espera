@@ -170,3 +170,69 @@ function actualizarContador() {
 
 actualizarContador(); // Actualiza el contador al cargar la página
 
+
+// Primer carrusel
+const items = document.querySelectorAll(".cover-item");
+let index = 0;
+
+function updateCoverflow() {
+    items.forEach((item, i) => {
+        item.classList.remove("left", "center", "right", "hidden");
+
+        if (i === index) {
+            item.classList.add("center");
+        } else if (i === (index - 1 + items.length) % items.length) {
+            item.classList.add("left");
+        } else if (i === (index + 1) % items.length) {
+            item.classList.add("right");
+        } else {
+            item.classList.add("hidden");
+        }
+    });
+}
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+    index = (index + 1) % items.length;
+    updateCoverflow();
+});
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+    index = (index - 1 + items.length) % items.length;
+    updateCoverflow();
+});
+
+updateCoverflow();
+
+    // Segundo carrusel
+const items2 = document.querySelectorAll(".cover-item2");
+let index2 = 0;
+
+function updateCoverflow2() {
+    items2.forEach((item, i) => {
+        item.classList.remove("left2", "center2", "right2", "hidden2");
+
+        if (i === index2) {
+            item.classList.add("center2");
+        } else if (i === (index2 - 1 + items2.length) % items2.length) {
+            item.classList.add("left2");
+        } else if (i === (index2 + 1) % items2.length) {
+            item.classList.add("right2");
+        } else {
+            item.classList.add("hidden2");
+        }
+    });
+}
+
+document.getElementById("nextBtn2").addEventListener("click", () => {
+    index2 = (index2 + 1) % items2.length;
+    updateCoverflow2();
+});
+
+document.getElementById("prevBtn2").addEventListener("click", () => {
+    index2 = (index2 - 1 + items2.length) % items2.length;
+    updateCoverflow2();
+});
+
+updateCoverflow2();
+
+
